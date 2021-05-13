@@ -1,7 +1,55 @@
 //variables
+/////////NOT COMPLETE
+
+
 var quizQuestionElement = document.getElementById("quiz-question")
 var answerSelectorsElement = document.getElementById("answer-selectors")
-var currentQuestionCount;
+var questionSelector;
+var currentQuestionCount; 
+var testfunction = "this is a test"
+
+
+
+
+
+
+
+//Initiate quiz and fire on click
+var initButton = document.getElementById("init-btn");
+
+initButton.addEventListener("click", executeQuiz);
+
+
+//INITIALIZE CODE AND BEGIN TO EXECUTE QUIZ
+
+
+function executeQuiz() {
+    //add hide button after we move on
+        console.log("test1");
+        questionSelector = quizQuestions.sort(); 
+        currentQuestionCount = 0;
+        getNextQuestion();
+    }
+
+
+function getNextQuestion() {
+    displayCurrentQuestion(questionSelector[currentQuestionCount]);
+    // need for each to cycle through all the available
+    console.log("testing2")
+
+}
+
+function displayCurrentQuestion(question) {
+    console.log("test3")
+    quizQuestionElement.textContent = quizQuestions[1].a
+}
+
+
+
+
+
+
+
 
 
 
@@ -63,41 +111,3 @@ var quizQuestions =  [
 ];
 
 //END QUESTIONS
-
-
-
-
-var quizQuestionContainer = document.getElementById("quiz-question")
-
-
-
-
-
-
-
-//Initiate quiz and fire on click
-var initButton = document.getElementById("init-btn");
-
-initButton.addEventListener("click", executeQuiz);
-
-
-//INITIALIZE CODE AND BEGIN TO EXECUTE QUIZ
-
-
-function executeQuiz() {
-    //add hide button after we move on
-        console.log("test1") 
-        currentQuestionCount = 1
-        getNextQuestion()
-    }
-
-
-function getNextQuestion() {
-    displayCurrentQuestion([])
-    console.log("testing2")
-
-}
-
-function displayCurrentQuestion(question) {
-    quizQuestionElement.innertext = quizQuestions.questions
-}

@@ -1,17 +1,6 @@
 // vars to display questions/answers and the prompt button
 
 
-//Event listener on init-btn to begin quiz - button runs executeQuiz
-var initButton = document.getElementById("init-btn")
-
-initButton.addEventListener("click", executeQuiz)
-
-
-
-
-
-
-
 
 var quizQuestions = document.getElementById('quiz-question');
 
@@ -25,13 +14,7 @@ var submitBtn = document.getElementById('submit-btn');
 
 
 
-//INITIALIZE CODE AND BEGIN TO EXECUTE QUIZ
 
-
-function executeQuiz() {
-console.log("QUIZ TEST")
-
-};
 
 
 //event listener for submit button
