@@ -1,70 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/Style/style.css" />
-    <title>Document</title>
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
-    <main>
-        <h1>The Master and the Margarita</h1> 
-        <div class="container"></div>
-        <div id="question-container" class="questions"></div>
-            <div id="quiz-question">Questions - select your response</div>
-        <div class="revealer"></div>
-        
-        <!-- check to see if you need all these -->
-        <div id="quiz-question"></div>
-
-
-
-        <div id="quiz-responses">
-        <div id="answer-selectors" class="answer-selectors">
-            
-
-
-
-
+    <title>Quiz</title>
+  </head>
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Quiz: The Master and the Margarita</h1>
+          <p class="lead">Mikhail Bulgakov</p>
         </div>
+      </div>
 
+    </header>
+    <body>
+
+    <!-- This card is contains the question, the possible selections and the submit button -->
+    <div class="card" style="width: 50rem; height: 20rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Please select from the available choices</h5>
+          <div class="container"></div>
+          <div id="question-container" class="questions"></div>
+              <div id="quiz-question">Questions - select your response</div>
+          <div class="revealer"></div>
+          
+          <!-- check to see if you need all these -->
+          <div id="quiz-question"></div>
+  
+  
+  
+          <div id="quiz-responses">
+          <div id="answer-selectors" class="answer-selectors">
+              <button class="btn">A)</button>
+              <button class="btn">B)</button>
+              <button class="btn">C)</button>
         </div>
-
-
-
-        <div id="quiz-responses"></div>
-
-
-
-
-        <!-- initialize button begins the entire function. Submit enters the selected answer to the quiz -->
-        <button id ="init-btn" class="init-btn"></button>Begin Quiz</button>
-        <button id="submit-btn" class = "submit-btn"></button>Submit Answer</button>
-        <div id="results"></div>
+      </div>
 
 
 
 
 
+  
+    
 
-
-
-    </main>
-    <script src="Assets/JS/script.js"></script>
-    <script src="Assets/JS/quizref.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
-
-<!-- boostrap formatting -->
-
-<!-- make sure you have 3 seperate js files. one for the questions, one for the game logic, and high score logic.
-
-
-
-
-
--->
