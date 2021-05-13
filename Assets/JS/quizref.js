@@ -1,3 +1,29 @@
+// vars to display questions/answers and the prompt button
+const quizQuestions = document.getElementById('quiz-question');
+const quizResults = document.getElementById('results');
+const submitBtnn = document.getElementById('submit-btn');
+
+
+//event listener for submit button
+document.getElementByID(submitBtn).addEventListener("click", displayResults());
+
+function storeResults() {};
+
+function displayResults() {};
+
+function executeQuiz() {};
+
+
+
+
+
+
+
+
+//or do questions like quiz questions = [ questions:"question goes here"
+// choices = [possible answer]
+
+
 const quizQuestions =  [ 
     {
         questions: "When was the Master and the Margarita written?",
@@ -53,4 +79,4 @@ const quizQuestions =  [
         
     },
 
-]
+];
