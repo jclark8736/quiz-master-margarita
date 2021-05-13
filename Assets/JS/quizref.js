@@ -1,21 +1,80 @@
 // vars to display questions/answers and the prompt button
-const quizQuestions = document.getElementById('quiz-question');
-const quizResults = document.getElementById('results');
-const submitBtnn = document.getElementById('submit-btn');
+
+
+//Event listener on init-btn to begin quiz - button runs executeQuiz
+var initButton = document.getElementById("init-btn")
+
+initButton.addEventListener("click", executeQuiz)
+
+
+
+
+
+
+
+
+var quizQuestions = document.getElementById('quiz-question');
+
+
+
+var quizResults = document.getElementById('results');
+
+
+
+var submitBtn = document.getElementById('submit-btn');
+
+
+
+//INITIALIZE CODE AND BEGIN TO EXECUTE QUIZ
+
+
+function executeQuiz() {
+console.log("QUIZ TEST")
+
+};
 
 
 //event listener for submit button
 document.getElementByID(submitBtn).addEventListener("click", displayResults());
 
-function storeResults() {};
 
+
+
+
+
+
+
+//DISPLAY CURRENT SCORE
 function displayResults() {};
 
-function executeQuiz() {};
 
 
 
 
+//STORE SCORE AND COUNT CURRENT RESULTS
+function storeResults() {};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//FUNCTION DISPLAYS  NEXT QUESTION, or ENDS QUIZ WHEN OUT OF QUESTIONS (need if/then and for loop)
+function getNextQuestion() {}
+
+
+
+//FUNCTION HANDLES ANSWER SUBMISSIONS
+
+function submitAnswer() {}
 
 
 
@@ -23,7 +82,7 @@ function executeQuiz() {};
 //or do questions like quiz questions = [ questions:"question goes here"
 // choices = [possible answer]
 
-
+//QUIZ QUESTIONS
 const quizQuestions =  [ 
     {
         questions: "When was the Master and the Margarita written?",
