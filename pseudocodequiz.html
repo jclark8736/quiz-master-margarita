@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <link rel="stylesheet" href="./Assets/Style/style.css"/>
+  <link rel="stylesheet" href="./Assets/Style/style.css" />
 
   <title>jQuery UI Interactions</title>
 </head>
@@ -18,69 +18,67 @@
 
 <header>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Quiz: The Master and the Margarita</h1>
-          <p class="lead">Mikhail Bulgakov</p>
-        </div>
-      </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Quiz: The Master and the Margarita</h1>
+      <p class="lead">Mikhail Bulgakov</p>
+    </div>
+  </div>
 
-    </header>
-    <body>
+</header>
 
-    <!-- This card is contains the question, the possible selections and the submit button -->
-    <div class="card" style="width: 50rem; height: 20rem;">
-        <div class="card-body">
-          <h5 class="card-title">Please select from the available choices</h5>
-          <div class="container"></div>
-          <div id="question-container" class="questions"></div>
-              <div id="quiz-question">Questions - select your response</div>
-          <div class="revealer"></div>
-          
-          <!-- check to see if you need all these -->
-          <div id="quiz-question"> </div>
-  
-            
-  
-          <div id="quiz-responses">
+<body>
 
-
-          <div id="answer-selectors" class="answer-selectors">
-              <button class="btn">A)</button>
-              <button class="btn">B)</button>
-              <button class="btn">C)</button>
-        </div>
-        <button id="submit-btn" class = "submit-btn"></button>Submit Answer</button>
-      </div>
-        </div>
-          <!-- Question card ENDS here -->
+  <!-- This card is contains the question, the possible selections and the submit button -->
 
 
 
-          <!-- store initializer and score here -->
-        <div class="card">
-            <div id="init-holder">
-                <button id ="init-btn" class="init-btn"></button>Begin Quiz</button>
+  <div id="question-container" class="questions"></div>
+  <div id="quiz-question">Questions - select your response</div>
+  <div class="revealer"></div>
 
-            </div>
-        <div id="results">
-            <p>"Your score is currently"</p>
-           
+  <!-- check to see if you need all these -->
+  <div id="quiz-question"> </div>
 
-        </div>
+
+
+  <div id="quiz-responses">
+
+
+    <div id="answer-selectors" class="answer-selectors">
 
     </div>
-  
-    
+    <button id="submit-btn" class="submit-btn"></button>Submit Answer</button>
+  </div>
+  </div>
+  <!-- Question card ENDS here -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   
-  </body>
 
-  
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src= "Assets/JS/script.js"></script>
+
+  <!-- store initializer and score here -->
+
+    <div id="init-holder">
+      <button id="init-btn" class="init-btn"></button>Begin Quiz</button>
+
+    </div>
+    <div id="results">
+      <p>"Your score is currently"</p>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="Assets/JS/script.js"></script>
 
 </html>

@@ -1,88 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/Style/style.css" />
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="./Assets/Style/style.css" />
+  </head>
 
-<header>
+  <body>
+    <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
-    <div class="p-5 text-center bg-light">
-        <h1 class="mb-3">Heading</h1>
-        <h4 class="mb-3">Subheading</h4>
-        <a class="btn btn-primary" href="" role="button">Call to action</a>
-        <h1>The Master and the Margarita</h1> 
+    <div class="timer">Time: <span id="time">0</span></div>
 
+    <div class="wrapper">
+      <div id="start-screen" class="start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by ten seconds!
+        </p>
+        <button id="start">Start Quiz</button>
       </div>
 
+      <div id="questions" class="hide">
+        <h2 id="question-text"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
 
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
 
-</header>
+      <div id="feedback" class="feedback hide"></div>
+    </div>
 
-
-<body>
-    <main>
-        /////////////////////////////////////////
-        <div class="container"></div>
-        <div id="question-container" class="questions"></div>
-            <div id="quiz-question">Questions - select your response</div>
-        <div class="revealer"></div>
-        
-        <!-- check to see if you need all these -->
-        <div id="quiz-question"></div>
-
-
-
-        <div id="quiz-responses">
-        <div id="answer-selectors" class="answer-selectors">
-            <button class="btn">A)</button>
-            <button class="btn">B)</button>
-            <button class="btn">C)</button>
-
-////////////////////////////// all this has been added to the card
-
-
-
-        </div>
-
-        </div>
-
-
-
-        <div id="quiz-responses"></div>
-
-
-
-
-        <!-- initialize button begins the entire function. Submit enters the selected answer to the quiz -->
-        <button id ="init-btn" class="init-btn"></button>Begin Quiz</button>
-     ////   <button id="submit-btn" class = "submit-btn"></button>Submit Answer</button>////////////
-        <div id="results"></div>
-
-
-
-
-
-
-
-
-    </main>
-    <script src="Assets/JS/script.js"></script>
-    <script src="Assets/JS/quizref.js"></script>
-</body>
-
+    <!-- <script src="./assets/JS/quizref.js"></script> -->
+    <script src="./Assets/JS/script.js"></script>
+  </body>
 </html>
-
-<!-- boostrap formatting -->
-
-<!-- make sure you have 3 seperate js files. one for the questions, one for the game logic, and high score logic.
-
-
-
-
-
--->

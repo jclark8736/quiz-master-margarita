@@ -1,12 +1,15 @@
 //variables
 /////////NOT COMPLETE
-
-
-var quizQuestionElement = document.getElementById("quiz-question")
-var answerSelectorsElement = document.getElementById("answer-selectors")
-var questionSelector;
-var currentQuestionCount; 
-var testfunction = "this is a test"
+var questionTextEl = document.getElementbyId=("question-text");
+var initButton = document.getElementById("start");
+var answerSelectorsElement = document.getElementById("answer-selectors");
+var currentQuestionCount = 0
+var time = questions.length * 15
+var timerEl = document.getElementById("time");
+var choicesEl = document.getElementById("choices");
+var testfunction = "this is a test";
+var questionsEl = document.getElementById("questions");
+var startScreenEl = document.getElementById("start-screen")
 
 
 
@@ -15,7 +18,7 @@ var testfunction = "this is a test"
 
 
 //Initiate quiz and fire on click
-var initButton = document.getElementById("init-btn");
+
 
 initButton.addEventListener("click", executeQuiz);
 
@@ -25,23 +28,27 @@ initButton.addEventListener("click", executeQuiz);
 
 function executeQuiz() {
     //add hide button after we move on
-        console.log("test1");
-        questionSelector = quizQuestions.sort(); 
-        currentQuestionCount = 0;
-        getNextQuestion();
+    startScreenEl.setAttribute("class", "hide")
+    questionsEl.setAttribute("class", "show")
+    timerId = setInterval(ClockTimer, 1000 )
+    timerEl.textContent = time;
+    getNextQuestion()
     }
 
 
 function getNextQuestion() {
-    displayCurrentQuestion(questionSelector[currentQuestionCount]);
+    var currentQuestion = questions[currentQuestionCount];
+    questionTextEl.textContent = currentQuestion.title;
+    choicesEl.innerHTML = "";
     // need for each to cycle through all the available
     console.log("testing2")
 
 }
 
-function displayCurrentQuestion(question) {
+function displayCurrentQuestion(question, quizQuestions) {
     console.log("test3")
-    quizQuestionElement.textContent = quizQuestions[1].a
+    for(var i = 0; i < quizQuestions.length; i++);
+
 }
 
 
@@ -54,7 +61,7 @@ function displayCurrentQuestion(question) {
 
 
 //QUESTIONS
-var quizQuestions =  [ 
+var questions =  [ 
 
     {
         questions: "When was the Master and the Margarita written?",
