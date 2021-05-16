@@ -78,6 +78,7 @@ var initialsEl = document.getElementById("initials")
 var feedbackEl = document.getElementById("feedback")
 var currentQuestion;
 var currentAnswer;
+var ulCreate = document.createElement("ul");
 
 
 
@@ -97,6 +98,7 @@ function executeQuiz() {
     //add hide button after we move on
     startScreenEl.setAttribute("class", "hide")
     questionsEl.setAttribute("class", "show")
+    choicesEl.setAttribute("class", "show")
    // timerId = setInterval(ClockTimer, 1000 )
     //timerEl.textContent = time;
     
@@ -117,7 +119,13 @@ function displayCurrentQuestion() {
     var answers;
 //appends content of currentQuestion to the div
     questionTextEl.innerHTML = currentQuestion ;
-
+    
+    currentAnswer.forEach(function(newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem
+        choicesEl.append(ulCreate);
+        ulCreate.append(listItem);
+    })
     
 
 
