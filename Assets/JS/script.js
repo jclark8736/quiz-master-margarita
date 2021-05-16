@@ -68,7 +68,6 @@ var questions =  [
 var questionTextEl = document.getElementbyId=("question-text");
 var initButton = document.getElementById("start");
 var answerSelectorsElement = document.getElementById("answer-selectors");
-var currentQuestionCount = 0
 var time = 60
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -77,7 +76,8 @@ var questionsEl = document.getElementById("questions");
 var startScreenEl = document.getElementById("start-screen")
 var initialsEl = document.getElementById("initials")
 var feedbackEl = document.getElementById("feedback")
-
+var currentQuestion;
+var currentAnswer;
 
 
 
@@ -104,27 +104,27 @@ function executeQuiz() {
     }
 
 
-function getNextQuestion(currentQuestionCount) {
-    for (var i = 0; i < questions.length; i++);
-    var currentQuestion=questions[currentQuestionCount].questions
-    var currentAnswer=questions[currentQuestionCount].userAnswers
+function getNextQuestion() {
+    for (var i = 0; i < questions.length; i++){
+    var currentQuestion=questions[i].userQuestions
+    var currentAnswer=questions[i].userAnswers
     displayCurrentQuestion()
-
     // need for each to cycle through all the available
-    console.log("testing2")
+    
+function displayCurrentQuestion() {
+    //container for user selected answer and right answer
+    var Userselection = [];
+    var answers;
+//hopefully appends content of currentQuestion to the div
+    questionTextEl.textContent = currentQuestion 
+
+    
+
+
+
+    }
 
 }
-
-function displayCurrentQuestion(question, quizQuestions) {
-    console.log("test3")
-    
-        var Userselection = [];
-
-
-
-        
-    
-    
 
 }
 
