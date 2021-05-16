@@ -79,8 +79,7 @@ var feedbackEl = document.getElementById("feedback")
 var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
-
-
+var currentQuestionIndex = 0
 
 
 
@@ -107,9 +106,10 @@ function executeQuiz() {
 
 
 function getNextQuestion() {
-    for (var i = 0; i < questions.length; i++){
-    var currentQuestion=questions[i].userQuestions
-    var currentAnswer=questions[i].userAnswers
+
+        var currentQuestion=questions[currentQuestionIndex].userQuestions
+        var currentAnswer=questions[currentQuestionIndex].userAnswers
+        
     displayCurrentQuestion()
     // need for each to cycle through all the available
     
@@ -122,7 +122,7 @@ function displayCurrentQuestion() {
     
     currentAnswer.forEach(function(newItem) {
         var listItem = document.createElement("li");
-        listItem.textContent = newItem
+        listItem.textContent = newItem.choice
         choicesEl.append(ulCreate);
         ulCreate.append(listItem);
     })
@@ -134,7 +134,7 @@ function displayCurrentQuestion() {
 
 }
 
-}
+
 
 
 
