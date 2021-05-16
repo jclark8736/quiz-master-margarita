@@ -45,7 +45,7 @@ var questions =  [
     },
 
     {
-        userQuestions: "What allusion does Woland's entourage make about his true nature when asked about the mystical events coming from apartment no. 50",
+        userQuestions: "What allusion does Woland's entourage make about his true nature when asked about the mystical events coming from apartment no. 50?",
         userAnswers:  [
             {choice: "Knowing won't do you any good", correct: false},
             {choice: "We're not here to make any trouble, only fixing the primus stove", correct: false},
@@ -65,9 +65,9 @@ var questions =  [
 
 
 
-var questionTextEl = document.getElementbyId=("question-text");
+var questionTextEl = document.getElementById("question-text");
 var initButton = document.getElementById("start");
-var answerSelectorsElement = document.getElementById("answer-selectors");
+var answerSelectorsElement = document.getElementById("choices");
 var time = 60
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -115,8 +115,8 @@ function displayCurrentQuestion() {
     //container for user selected answer and right answer
     var Userselection = [];
     var answers;
-//hopefully appends content of currentQuestion to the div
-    questionTextEl.textContent = currentQuestion 
+//appends content of currentQuestion to the div
+    questionTextEl.innerHTML = currentQuestion ;
 
     
 
