@@ -109,7 +109,7 @@ function getNextQuestion() {
 
         var currentQuestion=questions[currentQuestionIndex].userQuestions
         var currentAnswer=questions[currentQuestionIndex].userAnswers
-        
+
     displayCurrentQuestion()
     // need for each to cycle through all the available
     
@@ -121,10 +121,15 @@ function displayCurrentQuestion() {
     questionTextEl.innerHTML = currentQuestion ;
     
     currentAnswer.forEach(function(newItem) {
-        var listItem = document.createElement("li");
-        listItem.textContent = newItem.choice
+        var listAnswers = document.createElement("li");
+        listAnswers.textContent = newItem.choice
         choicesEl.append(ulCreate);
-        ulCreate.append(listItem);
+        ulCreate.append(listAnswers);
+        listAnswers.classList.add("btn");
+        var button=document.createElement("button")
+       listAnswers.addEventListener("click")
+        listAnswers.appendChild(button)
+        
     })
     
 
