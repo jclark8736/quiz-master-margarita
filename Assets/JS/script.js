@@ -108,7 +108,7 @@ function executeQuiz() {
 
 function getNextQuestion() {
 
-        var currentQuestion=questions[currentQuestionIndex].userQuestions
+        var currentQuestion=questions[currentQuestionIndex].choice
         var currentAnswer=questions[currentQuestionIndex].userAnswers
 
     displayCurrentQuestion()
@@ -136,8 +136,8 @@ function displayCurrentQuestion() {
     function compare(event) {
         var userSelection = event.target
         var answerResponse = document.createElement("div")
-        if (userSelection.textContent) ===  questions.[currentQuestionIndex].userAnswer {
-            score++;
+        if (userSelection==questions[currentQuestionIndex].userAnswers ) { 
+    
             answerResponse.textContent = "That is the correct answer"
         }
         else {
