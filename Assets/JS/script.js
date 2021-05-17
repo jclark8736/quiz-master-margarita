@@ -79,7 +79,8 @@ var feedbackEl = document.getElementById("feedback")
 var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
-var currentQuestionIndex = 0
+var currentQuestionIndex = 0;
+var score = 100;
 
 
 
@@ -126,16 +127,28 @@ function displayCurrentQuestion() {
         choicesEl.append(ulCreate);
         ulCreate.append(listAnswers);
         listAnswers.classList.add("btn");
-        var button=document.createElement("button")
-       listAnswers.addEventListener("click")
-        listAnswers.appendChild(button)
+        listAnswers.addEventListener("click", compare());
+
+    });
+
+    };
+    //boolean comparison
+    function compare(event) {
+        var userSelection = event.target
+        var answerResponse = document.createElement("div")
+        if (userSelection.textContent) ===  questions.[currentQuestionIndex].userAnswer {
+            score++;
+            answerResponse.textContent = "That is the correct answer"
+        }
+        else {
+            score = score - 20;
+            answerResponse.textContent = "That is the incorrect answer"
+
+
+        }
         
-    })
-    
 
-
-
-    }
+    } 
 
 }
 
