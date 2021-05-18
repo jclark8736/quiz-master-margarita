@@ -81,6 +81,7 @@ var currentAnswer;
 var ulCreate = document.createElement("ul");
 var currentQuestionIndex = 0;
 var score = 100;
+var answer;
 
 
 
@@ -108,16 +109,19 @@ function executeQuiz() {
 
 function getNextQuestion() {
 
-        var currentQuestion=questions[currentQuestionIndex].choice
+        document.querySelectorAll(".btn").forEach(function(btn){
+        btn.remove()
+        })
+        
+        var currentQuestion=questions[currentQuestionIndex].userQuestions
         var currentAnswer=questions[currentQuestionIndex].userAnswers
-
     displayCurrentQuestion()
     // need for each to cycle through all the available
     
 function displayCurrentQuestion() {
     //container for user selected answer and right answer
     var Userselection = [];
-    var answers;
+   
 //appends content of currentQuestion to the div
     questionTextEl.innerHTML = currentQuestion ;
     
@@ -127,24 +131,37 @@ function displayCurrentQuestion() {
         choicesEl.append(ulCreate);
         ulCreate.append(listAnswers);
         listAnswers.classList.add("btn");
-        listAnswers.addEventListener("click", compare());
+        listAnswers.addEventListener("click", compare);
+
 
     });
+    
+
 
     };
     //boolean comparison
     function compare(event) {
-        var userSelection = event.target
+        var userSelection = event.target.textContent
         var answerResponse = document.createElement("div")
-        if (userSelection==questions[currentQuestionIndex].userAnswers ) { 
+        for (var i = 0; i < questions[currentQuestionIndex].userAnswers.length; i++) {
+            if (questions[currentQuestionIndex].userAnswers[i].correct) {
+                answer = questions[currentQuestionIndex].userAnswers[i].choice
+            } 
+        }
     
+        if (userSelection===answer ) { 
+            console.log("correct")
             answerResponse.textContent = "That is the correct answer"
+            currentQuestionIndex++;
+            setTimeout(getNextQuestion, 3000);
         }
         else {
             score = score - 20;
             answerResponse.textContent = "That is the incorrect answer"
-
-
+            console.log("incorrect")
+            currentQuestionIndex++;
+            setTimeout(getNextQuestion, 3000);
+            
         }
         
 

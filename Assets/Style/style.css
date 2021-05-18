@@ -43,6 +43,10 @@ body {
     max-height: 400px;
     overflow: auto;
   }
+
+  .show{
+    display:block
+  }
   
   li {
     padding: 5px;
