@@ -160,7 +160,7 @@ function displayCurrentQuestion() {
             answerResponse.textContent = "That is the incorrect answer"
             console.log("incorrect")
             currentQuestionIndex++;
-            setTimeout(getNextQuestion, 3000);
+            setTimeout(getNextQuestion, 1000);
             
         }
         
@@ -173,7 +173,9 @@ function displayCurrentQuestion() {
 
 
 
-
+//end quiz function
+//make high score page with seperate html and javascript 
+//use localstorage
 
 
 
