@@ -153,14 +153,16 @@ function displayCurrentQuestion() {
             console.log("correct")
             answerResponse.textContent = "That is the correct answer"
             currentQuestionIndex++;
-            setTimeout(getNextQuestion, 3000);
+            setTimeout(getNextQuestion, 300);
+            alert("Correct!")
         }
         else {
             score = score - 20;
             answerResponse.textContent = "That is the incorrect answer"
             console.log("incorrect")
             currentQuestionIndex++;
-            setTimeout(getNextQuestion, 1000);
+            setTimeout(getNextQuestion, 300);
+            alert("That is the incorrect answer")
             
         }
         
