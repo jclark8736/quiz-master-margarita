@@ -68,7 +68,7 @@ var questions =  [
 var questionTextEl = document.getElementById("question-text");
 var initButton = document.getElementById("start");
 var answerSelectorsElement = document.getElementById("choices");
-//var timerEl = document.getElementById("timer");
+var timerEl = document.getElementById("timer");
 var choicesEl = document.getElementById("choices");
 var testfunction = "this is a test";
 var questionsEl = document.getElementById("questions");
@@ -82,17 +82,10 @@ var currentQuestionIndex = 0;
 let score = 100;
 var answer;
 var time= 30;
-//document.getElementById("timer").innerHTML=time;
+//document.getElementById("timer").innerHTML=timeId;
 
 
 //Initiate quiz and fire on click 
-// setInterval(function() {
-//     time --;
-//     if (time === 0) {
-//     endQuiz()
-//     }
-// });
-
 
 initButton.addEventListener("click", executeQuiz);
 
@@ -109,26 +102,22 @@ function executeQuiz() {
     
     // function quizCounter()
     //quiz timer
+    var timerId = setInterval(countDown, 1000);
+    
     function countDown() {
-        if (time > 0){
-        time = time --; 
-        console.log(time)
-        console.log("test123")
-        setInterval(1000)};
-        console.log(time)
+      if (time == -1) {
+        clearTimeout(timerId);  
+        endQuiz()
+      } else {
+       console.log(time--)
+        // timeLeft--;
       }
-      
-      
-
-
+    }
+        
 
     countDown()
+      
     
-
-
-
-
-
 
     getNextQuestion()
     };
@@ -200,7 +189,8 @@ function displayCurrentQuestion() {
 }
 //this function redirects to high score page
 function endQuiz() {
-    window.location.replace="./high-score.html"
+    console.log("QUIZ END TEST")
+    window.location.replace="high-score.html"
     
 }
 
