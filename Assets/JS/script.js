@@ -68,8 +68,7 @@ var questions =  [
 var questionTextEl = document.getElementById("question-text");
 var initButton = document.getElementById("start");
 var answerSelectorsElement = document.getElementById("choices");
-var time = 60
-var timerEl = document.getElementById("time");
+//var timerEl = document.getElementById("timer");
 var choicesEl = document.getElementById("choices");
 var testfunction = "this is a test";
 var questionsEl = document.getElementById("questions");
@@ -80,13 +79,19 @@ var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
 var currentQuestionIndex = 0;
-var score = 100;
+let score = 100;
 var answer;
+var time= 30;
+//document.getElementById("timer").innerHTML=time;
 
 
-
-
-//Initiate quiz and fire on click
+//Initiate quiz and fire on click 
+// setInterval(function() {
+//     time --;
+//     if (time === 0) {
+//     endQuiz()
+//     }
+// });
 
 
 initButton.addEventListener("click", executeQuiz);
@@ -100,11 +105,33 @@ function executeQuiz() {
     startScreenEl.setAttribute("class", "hide")
     questionsEl.setAttribute("class", "show")
     choicesEl.setAttribute("class", "show")
-   // timerId = setInterval(ClockTimer, 1000 )
-    //timerEl.textContent = time;
+    var time = 30;
     
+    // function quizCounter()
+    //quiz timer
+    function countDown() {
+        if (time > 0){
+        time = time --; 
+        console.log(time)
+        console.log("test123")
+        setInterval(1000)};
+        console.log(time)
+      }
+      
+      
+
+
+
+    countDown()
+    
+
+
+
+
+
+
     getNextQuestion()
-    }
+    };
 
 
 function getNextQuestion() {
@@ -165,12 +192,27 @@ function displayCurrentQuestion() {
             alert("That is the incorrect answer")
             
         }
-        
+        //END QUIZ
+
 
     } 
 
 }
+//this function redirects to high score page
+function endQuiz() {
+    window.location.replace="./high-score.html"
+    
+}
 
+// This function keeps time for the quiz
+// function countDown() {
+//     var counter = setInterval(function() {
+//         time --;
+//         if (time <= 0) {
+//             endQuiz()
+//         }
+//     }, 1000);
+// }
 
 
 
