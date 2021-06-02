@@ -57,6 +57,16 @@ var questions =  [
         ],
         
     },
+    {
+        userQuestions: "Placeholder",
+        userAnswers:  [
+            {choice: "1", correct: true},
+            {choice: "2", correct: false},
+            {choice: "3", correct: false}
+        ]
+        
+        
+    },
 
 ];
 
@@ -79,6 +89,7 @@ var questionsEl = document.getElementById("questions");
 var startScreenEl = document.getElementById("start-screen")
 var initialsEl = document.getElementById("initials")
 var feedbackEl = document.getElementById("feedback")
+var endScreenEl= document.getElementById("end-screen")
 var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
@@ -86,6 +97,7 @@ var currentQuestionIndex = 0;
 let score = 0;
 var answer;
 var time= 30;
+var finalScoreEl = document.getElementById("final-score")
 //document.getElementById("timer").innerHTML=timeId;
 
 
@@ -113,9 +125,9 @@ function executeQuiz() {
         clearTimeout(timerId);  
         endQuiz()
       } else {
-       console.log(time--)
+       (time--)
        timeLeft = time;
-       console.log(timeLeft)
+       
        timerEl.innerHTML = time
     
       }
@@ -140,11 +152,17 @@ function getNextQuestion() {
         var currentQuestion=questions[currentQuestionIndex].userQuestions
         var currentAnswer=questions[currentQuestionIndex].userAnswers
     displayCurrentQuestion()
-    // need for each to cycle through all the available
+
+
+
+
+
     
 function displayCurrentQuestion() {
     //container for user selected answer and right answer
     var Userselection = [];
+    
+
    
 //appends content of currentQuestion to the div
     questionTextEl.innerHTML = currentQuestion ;
@@ -157,9 +175,7 @@ function displayCurrentQuestion() {
         listAnswers.classList.add("btn");
         listAnswers.addEventListener("click", compare);
 
-        // if (currentQuestionIndex <= 6) {
-        //     endQuiz ();
-        // }
+
 
 
     });
@@ -195,27 +211,29 @@ function displayCurrentQuestion() {
             
         }
         //END QUIZ
-        
+        if (currentQuestionIndex >= questions.length -1) {
+            
+            endQuiz ();
+        }
 
     } 
 
-}
-//this function redirects to high score page
+};
+
+
+
+//this function displays the high score page
 function endQuiz() {
-    console.log("QUIZ END TEST")
-    window.location.replace="high-score.html"
+    console.log("QUIZ END TEST");
+    startScreenEl.setAttribute("class", "hide");
+    questionsEl.setAttribute("class", "hide");
+    choicesEl.setAttribute("class", "hide");
+    initialsEl.setAttribute("class", "show");
+    feedbackEl.setAttribute("class", "show");
+    endScreenEl.setAttribute("class", "show");
+    finalScoreEl.innerHTML= score;
     
 }
-
-// This function keeps time for the quiz
-// function countDown() {
-//     var counter = setInterval(function() {
-//         time --;
-//         if (time <= 0) {
-//             endQuiz()
-//         }
-//     }, 1000);
-// }
 
 
 
