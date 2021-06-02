@@ -97,7 +97,8 @@ var currentQuestionIndex = 0;
 let score = 0;
 var answer;
 var time= 30;
-var finalScoreEl = document.getElementById("final-score")
+var finalScoreEl = document.getElementById("feedback")
+var submitButton = document.getElementById("submit")
 //document.getElementById("timer").innerHTML=timeId;
 
 
@@ -232,10 +233,33 @@ function endQuiz() {
     feedbackEl.setAttribute("class", "show");
     endScreenEl.setAttribute("class", "show");
     finalScoreEl.innerHTML= score;
+    var highList= document.createElement("ul");
+    finalScoreEl.append(highList);
+
+    // show high scores from local storage
+    for (i = 0; i < localStorage.length; i++) {
+        console.log(localStorage.key(i));
+        console.log(localStorage.getItem(localStorage.key(i)))
+        
+        
+    }
     
 }
 
+//submit initials and save high scores.
+submitButton.addEventListener("click", saveScore);
 
+function saveScore() {
+    savedInit =initialsEl.value
+    savedScore= savedInit + " " + score;
+    console.log(savedScore);
+    localStorage.setItem(savedInit, score)
+    
+
+
+    
+
+};
 
 
 //end quiz function
