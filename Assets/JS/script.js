@@ -1,3 +1,7 @@
+//to do - get timer printing properly, save score to local storage (change way score is counted too)
+
+
+
 //variables
 //QUESTIONS
 var questions =  [ 
@@ -79,7 +83,7 @@ var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
 var currentQuestionIndex = 0;
-let score = 100;
+let score = 0;
 var answer;
 var time= 30;
 //document.getElementById("timer").innerHTML=timeId;
@@ -110,8 +114,12 @@ function executeQuiz() {
         endQuiz()
       } else {
        console.log(time--)
-        // timeLeft--;
+       timeLeft = time;
+       console.log(timeLeft)
+       timerEl.innerHTML = time
+    
       }
+
     }
         
 
@@ -149,6 +157,10 @@ function displayCurrentQuestion() {
         listAnswers.classList.add("btn");
         listAnswers.addEventListener("click", compare);
 
+        // if (currentQuestionIndex <= 6) {
+        //     endQuiz ();
+        // }
+
 
     });
     
@@ -171,9 +183,10 @@ function displayCurrentQuestion() {
             currentQuestionIndex++;
             setTimeout(getNextQuestion, 300);
             alert("Correct!")
+            score = score + 20
         }
         else {
-            score = score - 20;
+            
             answerResponse.textContent = "That is the incorrect answer"
             console.log("incorrect")
             currentQuestionIndex++;
@@ -182,7 +195,7 @@ function displayCurrentQuestion() {
             
         }
         //END QUIZ
-
+        
 
     } 
 
