@@ -76,7 +76,7 @@ var questions =  [
 
 
 
-
+//global variables and DOM elements
 
 
 var questionTextEl = document.getElementById("question-text");
@@ -86,10 +86,10 @@ var timerEl = document.getElementById("timer");
 var choicesEl = document.getElementById("choices");
 var testfunction = "this is a test";
 var questionsEl = document.getElementById("questions");
-var startScreenEl = document.getElementById("start-screen")
-var initialsEl = document.getElementById("initials")
-var feedbackEl = document.getElementById("feedback")
-var endScreenEl= document.getElementById("end-screen")
+var startScreenEl = document.getElementById("start-screen");
+var initialsEl = document.getElementById("initials");
+var feedbackEl = document.getElementById("feedback");
+var endScreenEl= document.getElementById("end-screen");
 var currentQuestion;
 var currentAnswer;
 var ulCreate = document.createElement("ul");
@@ -97,9 +97,12 @@ var currentQuestionIndex = 0;
 let score = 0;
 var answer;
 var time= 30;
-var finalScoreEl = document.getElementById("feedback")
-var submitButton = document.getElementById("submit")
-//document.getElementById("timer").innerHTML=timeId;
+var finalScoreEl = document.getElementById("feedback");
+var submitButton = document.getElementById("submit");
+var highScoreEl = document.getElementById("high-scores");
+var highScoreHolderEl = document.getElementById("high-score-holder");
+var scoreArray =[];
+
 
 
 //Initiate quiz and fire on click 
@@ -195,7 +198,7 @@ function displayCurrentQuestion() {
         }
     
         if (userSelection===answer ) { 
-            console.log("correct")
+           
             answerResponse.textContent = "That is the correct answer"
             currentQuestionIndex++;
             setTimeout(getNextQuestion, 300);
@@ -205,7 +208,7 @@ function displayCurrentQuestion() {
         else {
             
             answerResponse.textContent = "That is the incorrect answer"
-            console.log("incorrect")
+           
             currentQuestionIndex++;
             setTimeout(getNextQuestion, 300);
             alert("That is the incorrect answer")
@@ -225,25 +228,40 @@ function displayCurrentQuestion() {
 
 //this function displays the high score page
 function endQuiz() {
-    console.log("QUIZ END TEST");
+    
     startScreenEl.setAttribute("class", "hide");
     questionsEl.setAttribute("class", "hide");
     choicesEl.setAttribute("class", "hide");
     initialsEl.setAttribute("class", "show");
     feedbackEl.setAttribute("class", "show");
     endScreenEl.setAttribute("class", "show");
+    highScoreEl.setAttribute("class", "show")
+    highScoreHolderEl.setAttribute("class", "show")
     finalScoreEl.innerHTML= score;
     var highList= document.createElement("ul");
     finalScoreEl.append(highList);
 
     // show high scores from local storage
     for (i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.key(i));
-        console.log(localStorage.getItem(localStorage.key(i)))
         
+        testArray = scoreArray[i];
+        console.log("TEST123")
+        testPrint = testArray.initials + ":  " + testArray.score;
+        console.log(testPrint);
+
+        
+        var printScores = document.createElement("li")
+        printScores.initials = scoreArray[i];
+        
+        console.log(printScores.score)
+
+        highScoreHolderEl.append(printScores)
+        printScores.textContent=testPrint;
+
         
     }
     
+
 }
 
 //submit initials and save high scores.
@@ -251,24 +269,30 @@ submitButton.addEventListener("click", saveScore);
 
 function saveScore() {
     savedInit =initialsEl.value
-    savedScore= savedInit + " " + score;
-    console.log(savedScore);
-    localStorage.setItem(savedInit, score)
+    savedScore= score
     
+    var scoreObject = {
+        initials:savedInit, 
+        score:savedScore
 
+    }
+scoreArray.push(scoreObject);
 
-    
+localStorage.setItem("saveScores", JSON.stringify(scoreArray));
 
+ 
 };
 
 
-//end quiz function
-//make high score page with seperate html and javascript 
-//use localstorage
+//this function keeps the page from resetting the highscores on pageloads.
+function displayScore() {
 
+    scoreArray = JSON.parse(localStorage.getItem("saveScores"))
+   
 
+}
 
-
+displayScore();
 
 
 
